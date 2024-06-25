@@ -3,9 +3,9 @@ import { z } from "zod";
 
 export const env = createEnv({
   server: {
-    PORT: z.number().int().positive().lte(65_535),
-    DATABASE_URL: z.string().url(),
-    OPEN_AI_API_KEY: z.string().min(1),
+    PORT: z.number().int().positive().lte(65_535).default(3000),
+    // DATABASE_URL: z.string().url(),
+    // OPEN_AI_API_KEY: z.string().min(1),
   },
 
   /**

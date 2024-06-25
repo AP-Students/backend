@@ -1,6 +1,6 @@
-import { logger } from "@lib/logger";
-import { app } from "./app.js";
-import { env } from "@lib/env.js";
+import { logger } from "./lib/logger";
+import { app } from "./app";
+import { env } from "@lib/env";
 
 const port = env.PORT;
 

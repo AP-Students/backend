@@ -1,5 +1,5 @@
-import pino from "pino";
-import pretty from "pino-pretty";
+import { pino } from "pino";
+import PinoPretty from "pino-pretty";
 
 function dateStamp(stamp?: number) {
   const dateObject = stamp ? new Date(stamp) : new Date();
@@ -16,7 +16,7 @@ function dateStamp(stamp?: number) {
     .replaceAll("/", "-");
 }
 
-const stream = pretty({
+const stream = PinoPretty({
   customPrettifiers: {
     time: () => {
       return dateStamp();
