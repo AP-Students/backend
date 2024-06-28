@@ -1,4 +1,4 @@
-name: Build
+name: Backend CI
 
 on:
   push:
@@ -31,3 +31,21 @@ jobs:
 
       - run: bun run build 
         name: build 
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        name: checkout
+
+      - uses: oven-sh/setup-bun@v2
+        name: setup bun
+        with:
+          bun-version: latest
+
+      - run: bun i
+        name: install dependencies
+
+      - run: bun lint
+        name: lint
