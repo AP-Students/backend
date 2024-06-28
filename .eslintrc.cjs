@@ -55,6 +55,7 @@ module.exports = {
       "error",
       {
         allowList: {
+          db: true,
           env: true,
           src: true,
           props: true,
@@ -83,6 +84,13 @@ module.exports = {
         "@typescript-eslint/no-explicit-any": "off",
         "unicorn/prevent-abbreviations": ["warn"],
       },
+    },
+    {
+      files: ["tsoa/routes.ts"],
+      rules: {
+        "eslint-comments/no-unlimited-disable": "off",
+        "unicorn/no-abusive-eslint-disable": "off",
+      }
     },
   ],
   env: {

@@ -8,6 +8,6 @@ const client = new Client({
   ssl: { rejectUnauthorized: false },
 });
 
-client.connect();
+await client.connect();
 
 export const db = drizzle(client, { schema });
