@@ -1,9 +1,10 @@
 import { Client } from "pg";
 import { drizzle } from "drizzle-orm/node-postgres";
 import * as schema from "./schema";
+import { env } from "@lib/env";
 
 const client = new Client({
-  connectionString: process.env["DB_URL"],
+  connectionString: env.DATABASE_URL,
   ssl: { rejectUnauthorized: false },
 });
 
