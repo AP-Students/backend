@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { db } from '../database';
-import { users } from '../database/schema.ts';
+import { users } from '../database/schema';
 
 const router = Router();
 
