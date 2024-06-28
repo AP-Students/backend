@@ -1,0 +1,33 @@
+name: Lint
+
+on:
+  push:
+    branches: "*"
+  pull_request:
+    types: [opened, reopened, ready_for_review, synchronize]
+  workflow_dispatch:
+
+permissions: write-all
+
+
+env:
+  DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        name: checkout
+
+      - uses: oven-sh/setup-bun@v2
+        name: setup bun
+        with:
+          bun-version: latest
+
+      - run: bun i
+        name: install dependencies
+
+      - run: bun lint
+        name: lint

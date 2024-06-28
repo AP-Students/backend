@@ -10,7 +10,8 @@
     "lint:fix": "eslint . --fix",
     "dev": "concurrently \"bun run --watch --no-clear-screen src/server.ts\" \"nodemon -x tsoa spec-and-routes\"",
     "start": "bun run src/server.ts",
-    "build": "tsoa spec-and-routes && tsc"
+    "build": "tsoa spec-and-routes && tsc",
+    "check": "tsc --noEmit",
   },
   "keywords": [],
   "author": "",
