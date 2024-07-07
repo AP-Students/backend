@@ -57,7 +57,7 @@ export class ArticlesController extends Controller {
   ): Promise<Article> {
     // Logic to update the article
 
-    await logUpdate(id, requestBody).catch(error => console.error(`Error logging update: ${error}`)); // Assuming requestBody as the source of changes
+    await logUpdate(id, requestBody);
 
     return requestBody;
   }
